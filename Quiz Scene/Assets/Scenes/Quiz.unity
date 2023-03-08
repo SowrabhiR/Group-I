@@ -199,6 +199,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159365942}
   m_CullTransparentMesh: 1
+--- !u!1 &266254685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 266254687}
+  - component: {fileID: 266254686}
+  m_Layer: 0
+  m_Name: audioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &266254686
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266254685}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &266254687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266254685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 485.8, y: 189.311, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &365763334
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,12 +957,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5216620cf5bb47343b3393df879fe52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  options: []
   fruitText: {fileID: 1951991854}
   responseText: {fileID: 583875338}
-  question: {fileID: 0}
-  response: {fileID: 0}
-  audioSource: {fileID: 0}
-  options: []
+  audioSource: {fileID: 266254686}
+  Apple: {fileID: 8300000, guid: deb27f468ac839243b80ad9e400f5e79, type: 3}
+  Banana: {fileID: 8300000, guid: 4497d417e27e3114d9ccc4cce555d153, type: 3}
+  Blueberry: {fileID: 8300000, guid: 4f5b1e4d1a043794daaf9941e017fa5f, type: 3}
+  Cherry: {fileID: 8300000, guid: d56d27a95dd620d46b68e43e8b002958, type: 3}
+  Jackfruit: {fileID: 8300000, guid: 5ad502b8da6976745a3beb59386a421e, type: 3}
+  Kiwi: {fileID: 8300000, guid: 4b6729afe6b8995488ee725fa9b04ec9, type: 3}
+  Mango: {fileID: 8300000, guid: 8d15d2952aae41045bbb070fe4968321, type: 3}
+  Orange: {fileID: 8300000, guid: 29494b36b27933f4ea600dcfc771e0cb, type: 3}
+  Peach: {fileID: 8300000, guid: 29f53f49ad3042349bb8182eeee244aa, type: 3}
+  Pineapple: {fileID: 8300000, guid: 90c9d5a66d18f7a4fadbc4ef377a3007, type: 3}
+  Strawberry: {fileID: 8300000, guid: 3f5703fbb1893be499770aaba944e1e7, type: 3}
+  Watermelon: {fileID: 8300000, guid: 6b81fe9a8ac03bc40afedf02464e2065, type: 3}
+  Correct: {fileID: 8300000, guid: 0cbf141156897bb468027bb6dba463cc, type: 3}
+  Incorrect: {fileID: 8300000, guid: e58b42216dfdd7f43a3920f14f617525, type: 3}
   button1: {fileID: 0}
   button2: {fileID: 0}
   button3: {fileID: 0}
@@ -1228,7 +1368,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740518839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1590,12 +1730,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5216620cf5bb47343b3393df879fe52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  options: []
   fruitText: {fileID: 1951991854}
   responseText: {fileID: 0}
-  question: {fileID: 0}
-  response: {fileID: 0}
   audioSource: {fileID: 0}
-  options: []
+  Apple: {fileID: 0}
+  Banana: {fileID: 0}
+  Blueberry: {fileID: 0}
+  Cherry: {fileID: 0}
+  Jackfruit: {fileID: 0}
+  Kiwi: {fileID: 0}
+  Mango: {fileID: 0}
+  Orange: {fileID: 0}
+  Peach: {fileID: 0}
+  Pineapple: {fileID: 0}
+  Strawberry: {fileID: 0}
+  Watermelon: {fileID: 0}
+  Correct: {fileID: 0}
+  Incorrect: {fileID: 0}
   button1: {fileID: 0}
   button2: {fileID: 0}
   button3: {fileID: 0}

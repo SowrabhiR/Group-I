@@ -1,10 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine;
+
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class QuizScript : MonoBehaviour
 {
     private string[] fruitsNames = {"Apple", "Banana", "Blueberry", "Cherry", "Jackfruit",
@@ -16,9 +16,11 @@ public class QuizScript : MonoBehaviour
     public TextMeshProUGUI fruitText = new TextMeshProUGUI();
     public TextMeshProUGUI responseText = new TextMeshProUGUI();
 
-    public AudioClip question;
-    public AudioClip response;
     public AudioSource audioSource;
+    
+    public AudioClip Apple, Banana, Blueberry, Cherry, Jackfruit,Kiwi, Mango, Orange, Peach, Pineapple, Strawberry, Watermelon;
+    public AudioClip Correct, Incorrect;
+    //public AudioSource audioSource;
 
     public Button button1;
     public Button button2;
@@ -31,22 +33,57 @@ public class QuizScript : MonoBehaviour
     //Random object is created to randomly generate the questions and options.
     System.Random ran = new System.Random();
 
-    
-    
-    /* Description : 
-     ChooseCorrectAnswer() method dynamically chooses one right answer, based on which the question will be asked.
-    */
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log("Entered start");
+        button1 = GameObject.Find("Option1").GetComponent<Button>();
+        button2 = GameObject.Find("Option2").GetComponent<Button>();
+        button3 = GameObject.Find("Option3").GetComponent<Button>();
+        button4 = GameObject.Find("Option4").GetComponent<Button>();
+
+        button1.onClick.AddListener(OnButton1Click);
+        button2.onClick.AddListener(OnButton2Click);
+        button3.onClick.AddListener(OnButton3Click);
+        button4.onClick.AddListener(OnButton4Click);
+
+        NextQuestion();
+
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+     
+    }
+
     public int ChooseCorrectAnswer()
     {
-        int chosenFruit = ran.Next(11);
-        for (int i =0; i< rightAnswer.Length; i++)
+        bool uniqueFruit = false;
+        int chosenFruit;
+
+        do
         {
-            if (chosenFruit == rightAnswer[i])
+            chosenFruit = ran.Next(11);
+            uniqueFruit = true;
+
+            for (int i = 0; i < rightAnswer.Length; i++)
             {
-                ChooseCorrectAnswer();
+                if (chosenFruit == rightAnswer[i])
+                {
+                    uniqueFruit = false;
+                    break;
+                }
             }
-        }
-        return chosenFruit;   
+        } 
+
+        while (!uniqueFruit);
+        return chosenFruit;
+       
+        
     }
 
     /* Description : 
@@ -60,7 +97,7 @@ public class QuizScript : MonoBehaviour
         Sprite sprite;
         while (wrongAnswerCounter != 4)
         {
-            int randomOption = ran.Next(1,4);
+            int randomOption = ran.Next(0,3);
             if (IsUnique(randomOption, WrongAnswer))
             { 
                 WrongAnswer[wrongAnswerCounter] = fruitsNames[randomOption];
@@ -120,8 +157,7 @@ public class QuizScript : MonoBehaviour
         if(rightAnswerPosition == 0)
         {
             RightAnswerMessage();
-        }
-       else
+        }else
         {
             WrongAnswerMessage();
         }
@@ -170,8 +206,10 @@ public class QuizScript : MonoBehaviour
     {
         score++;
         responseText.text = "Yay! You are correct!";
-        response = Resources.Load<AudioClip>("Audios/Responses/Correct");
-        audioSource.PlayOneShot(response);
+        audioSource.clip = Incorrect;
+        audioSource.Play();
+        
+        
         NextQuestion();
     }
 
@@ -182,18 +220,30 @@ public class QuizScript : MonoBehaviour
     void WrongAnswerMessage()
     {
         responseText.text = "Try again";
-        response = Resources.Load<AudioClip>("Audios/Responses/Incorrect");
-        audioSource.PlayOneShot(response);
+        audioSource.clip = Incorrect;
+        audioSource.Play();
+       
     }
 
     /*Description :
     * void GenerateQuestion(int RightAnswer) loads the question onto the scene
     */
-    void GenerateQuestion(int RightAnswer)
+   void GenerateQuestion(int rightAnswerIndex)
     {
-       fruitText.text = "Where is the " + fruitsNames[RightAnswer] + "?";
-       question = Resources.Load<AudioClip>("Audios/Questions/" + fruitsNames[RightAnswer]);
-       audioSource.PlayOneShot(question);
+
+
+    fruitText.text = "Where is the " + fruitsNames[rightAnswerIndex] + "?";
+
+    for(int i = 0; i < fruitsNames.Length; i++)
+    {
+        if (i == rightAnswerIndex){
+
+            audioSource.clip = Resources.Load<AudioClip>("Audios/Questions/" + fruitsNames[rightAnswerIndex]);
+            audioSource.Play();;
+        }
+    }
+
+
     }
 
     /*Description :
@@ -225,32 +275,9 @@ public class QuizScript : MonoBehaviour
         }
         else
         {
-            ShowVictoryMessage();
+            SceneManager.LoadScene ("Congrats");
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Entered start");
-        button1 = GameObject.Find("Option1").GetComponent<Button>();
-        button2 = GameObject.Find("Option2").GetComponent<Button>();
-        button3 = GameObject.Find("Option3").GetComponent<Button>();
-        button4 = GameObject.Find("Option4").GetComponent<Button>();
-
-        button1.onClick.AddListener(OnButton1Click);
-        button2.onClick.AddListener(OnButton2Click);
-        button3.onClick.AddListener(OnButton3Click);
-        button4.onClick.AddListener(OnButton4Click);
-
-        NextQuestion();
-
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
