@@ -781,7 +781,7 @@ Domain Reload Profiling:
 				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
+			AwakeInstancesAfterBackupRestoration (26ms)
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 2.23 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -948,6 +948,54 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2956.706602 seconds.
+  path: Assets/Fruits
+  artifactKey: Guid(8f018204fedf2c44bb7380d3b9b864e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fruits using Guid(8f018204fedf2c44bb7380d3b9b864e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bef7cb11b123cf29741608a2d5580657') in 0.036589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 167.468031 seconds.
+  path: Assets/Resources/blank-meadow-landscape-scene-sunset-time_1308-73345.jpg
+  artifactKey: Guid(c30716c7ea1f5ad40bc682b276bfbe15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/blank-meadow-landscape-scene-sunset-time_1308-73345.jpg using Guid(c30716c7ea1f5ad40bc682b276bfbe15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65e37085753484515bd32a2ce24b450f') in 0.278429 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.874568 seconds.
+  path: Assets/Resources/Images/Back.png
+  artifactKey: Guid(cedfded7e4ccc7c4089bc09d451c4f4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Images/Back.png using Guid(cedfded7e4ccc7c4089bc09d451c4f4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e75716b5fc69cffcbadd82eb2011bbe0') in 0.097138 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Resources/Images/MicrosoftTeams-image.png
+  artifactKey: Guid(efb95038d519d684582808b7fb3139ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Images/MicrosoftTeams-image.png using Guid(efb95038d519d684582808b7fb3139ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f65ade9933ef6a6e75762b873080053') in 0.494048 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Resources/Images/Start_Quiz.png
+  artifactKey: Guid(ad962373517b03d40a4d103dbc4f21ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Images/Start_Quiz.png using Guid(ad962373517b03d40a4d103dbc4f21ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e8f20d6b17a4577747ba4b25f7d0924') in 0.123025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Resources/Images/Pineapple.png
+  artifactKey: Guid(c9f69be9286669649805fbb56b3efa68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Images/Pineapple.png using Guid(c9f69be9286669649805fbb56b3efa68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc46e2f8896ebf47008a8c35c7e3412c') in 0.079291 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Resources/Images/Cherry.png
+  artifactKey: Guid(43babaeacd119e244993cf65cd633edd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Images/Cherry.png using Guid(43babaeacd119e244993cf65cd633edd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01a60d64a6df48aaca457d3fee23755f') in 0.063064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Resources/Images/Orange.png
+  artifactKey: Guid(e9ef3f0d7c6490a4b9988d6c86a1f221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Images/Orange.png using Guid(e9ef3f0d7c6490a4b9988d6c86a1f221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7714f1bf994c190611ebc98b4275e91b') in 0.072654 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
