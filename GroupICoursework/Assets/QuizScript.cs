@@ -13,8 +13,8 @@ public class QuizScript : MonoBehaviour
     private int[] rightAnswer = new int[5];
     public string[] options = new string[4];
 
-    public TextMeshProUGUI fruitText = new TextMeshProUGUI();
-    public TextMeshProUGUI responseText = new TextMeshProUGUI();
+    public TMP_Text fruitText;
+    public TMP_Text responseText;
 
     public AudioSource audioSource;
     
@@ -48,6 +48,12 @@ public class QuizScript : MonoBehaviour
         button2.onClick.AddListener(OnButton2Click);
         button3.onClick.AddListener(OnButton3Click);
         button4.onClick.AddListener(OnButton4Click);
+
+        
+        responseText = GameObject.Find("Response").GetComponent<TMP_Text>();
+        fruitText = GameObject.Find("Question").GetComponent<TMP_Text>();
+
+        audioSource = GameObject.Find("audioSource").GetComponent<AudioSource>();
 
         NextQuestion();
 
@@ -97,7 +103,7 @@ public class QuizScript : MonoBehaviour
         Sprite sprite;
         while (wrongAnswerCounter != 4)
         {
-            int randomOption = ran.Next(0,3);
+            int randomOption = ran.Next(0,11);
             if (IsUnique(randomOption, WrongAnswer))
             { 
                 WrongAnswer[wrongAnswerCounter] = fruitsNames[randomOption];
@@ -206,9 +212,8 @@ public class QuizScript : MonoBehaviour
     {
         score++;
         responseText.text = "Yay! You are correct!";
-        audioSource.clip = Incorrect;
+        audioSource.clip = Resources.Load<AudioClip>("Audios/Responses/Correct");
         audioSource.Play();
-        
         
         NextQuestion();
     }
@@ -220,7 +225,7 @@ public class QuizScript : MonoBehaviour
     void WrongAnswerMessage()
     {
         responseText.text = "Try again";
-        audioSource.clip = Incorrect;
+        audioSource.clip = Resources.Load<AudioClip>("Audios/Responses/Incorrect");
         audioSource.Play();
        
     }
