@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
 
 
     // Start is called before the first frame update
+    // Switch case to choose the correct audio file to play
     void Start()
     {
         

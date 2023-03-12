@@ -18,9 +18,8 @@ public class QuizScript : MonoBehaviour
 
     public AudioSource audioSource;
     
-    public AudioClip Apple, Banana, Blueberry, Cherry, Jackfruit,Kiwi, Mango, Orange, Peach, Pineapple, Strawberry, Watermelon;
+    public AudioClip Apple, Banana, Blueberry, Cherry, Jackfruit, Kiwi, Mango, Orange, Peach, Pineapple, Strawberry, Watermelon;
     public AudioClip Correct, Incorrect;
-    //public AudioSource audioSource;
 
     public Button button1;
     public Button button2;
@@ -38,6 +37,8 @@ public class QuizScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //Get all buttons, audio and text components and add on click listeners for each thats needed
         Debug.Log("Entered start");
         button1 = GameObject.Find("Option1").GetComponent<Button>();
         button2 = GameObject.Find("Option2").GetComponent<Button>();
@@ -66,6 +67,7 @@ public class QuizScript : MonoBehaviour
      
     }
 
+    // Function for choosing the correct answer and returning what the user chooses
     public int ChooseCorrectAnswer()
     {
         bool uniqueFruit = false;
@@ -97,23 +99,23 @@ public class QuizScript : MonoBehaviour
    */
     public void WrongOptions(int rightAnswer)
     {
-        string[] WrongAnswer = new string[4];
-        WrongAnswer[0] = fruitsNames[rightAnswer];
+        string[] wrongAnswer = new string[4];
+        wrongAnswer[0] = fruitsNames[rightAnswer];
         int wrongAnswerCounter = 1;
         Sprite sprite;
         while (wrongAnswerCounter != 4)
         {
             int randomOption = ran.Next(0,11);
-            if (IsUnique(randomOption, WrongAnswer))
+            if (IsUnique(randomOption, wrongAnswer))
             { 
-                WrongAnswer[wrongAnswerCounter] = fruitsNames[randomOption];
+                wrongAnswer[wrongAnswerCounter] = fruitsNames[randomOption];
 
                 sprite = Resources.Load<Sprite>(fruitsNames[randomOption]);  // Load the image from the path
                 wrongAnswerCounter++;
             }
             
         }
-        Shuffle(WrongAnswer);
+        Shuffle(wrongAnswer);
 
     }
     /* Description : 
@@ -231,7 +233,7 @@ public class QuizScript : MonoBehaviour
     }
 
     /*Description :
-    * void GenerateQuestion(int RightAnswer) loads the question onto the scene
+    * void GenerateQuestion(int RightAnswer) loads the question onto the scene and plays the audio prompt for it
     */
    void GenerateQuestion(int rightAnswerIndex)
     {

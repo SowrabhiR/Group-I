@@ -18,20 +18,25 @@ public class CongratsScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //Message to display
         CongratsMSG.text = "Well Done!! You Have Completed The Quiz";
         ContinueMSG.text = "Tap the screen to continue";
-        
+
     }
 
- 
+
+
 
     // Update is called once per frame
     void Update()
-    {       
-           //condition when the mouse button in clicked
-            if (Input.GetMouseButton(0)){
-                 SceneManager.LoadScene("Quiz");
-            }
-        
+    {
+        //condition when the mouse button in clicked
+        if (Input.GetMouseButton(0))
+        {
+            SceneManager.LoadScene("Quiz");
+        }
+
     }
 }
+
