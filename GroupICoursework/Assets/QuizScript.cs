@@ -55,7 +55,7 @@ public class QuizScript : MonoBehaviour
         fruitText = GameObject.Find("Question").GetComponent<TMP_Text>();
 
         audioSource = GameObject.Find("audioSource").GetComponent<AudioSource>();
-
+     
         NextQuestion();
 
     }
@@ -213,11 +213,11 @@ public class QuizScript : MonoBehaviour
     void RightAnswerMessage()
     {
         score++;
-        responseText.text = "Yay! You are correct!";
+        responseText.text = "You got the correct answer!";
         audioSource.clip = Resources.Load<AudioClip>("Audios/Responses/Correct");
-        audioSource.Play();
+        audioSource.Play(); 
         
-        NextQuestion();
+        Invoke("NextQuestion", 2);
     }
 
 
@@ -226,7 +226,7 @@ public class QuizScript : MonoBehaviour
     */
     void WrongAnswerMessage()
     {
-        responseText.text = "Try again";
+        responseText.text = "Please try again!";
         audioSource.clip = Resources.Load<AudioClip>("Audios/Responses/Incorrect");
         audioSource.Play();
        

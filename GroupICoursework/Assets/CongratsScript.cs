@@ -20,8 +20,8 @@ public class CongratsScript : MonoBehaviour
     {
 
         //Message to display
-        CongratsMSG.text = "Well Done!! You Have Completed The Quiz";
-        ContinueMSG.text = "Tap the screen to continue";
+        CongratsMSG.text = "You Have Completed The Quiz";
+        ContinueMSG.text = "Tap the screen to go to menu";
 
     }
 
@@ -34,7 +34,7 @@ public class CongratsScript : MonoBehaviour
         //condition when the mouse button in clicked
         if (Input.GetMouseButton(0))
         {
-            SceneManager.LoadScene("Quiz");
+            SceneManager.LoadScene("MainMenu");
         }
 
     }
